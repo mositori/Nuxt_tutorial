@@ -23,14 +23,20 @@
 
 <!-- 855343e9656c6bc5524511618732356e2653a187-->
 <script>
-  export default {
-    async asyncData({ app }) {
-      const items = await app.$axios.$get('https://qiita.com/api/v2/items?query=tag:nuxt.js')
-      return {
-        items
-      }
+import { mapGetters } from 'vuex'
+
+export default {
+  async asyncData({ store }) {
+    if (store.getters['items'].length) {
+      return
     }
+    await store.dispatch('fetchItems')
+  },
+
+  computed: {
+    ...mapGetters(['items'])
   }
+}
 </script>
 
 <style>
