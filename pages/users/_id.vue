@@ -2,7 +2,7 @@
   <div  class="container">
     <div>
       <h3>{{ user.id }}</h3>
-      <img src="user.profile_image_url" width="120" alt="">
+      <img :src="user.profile_image_url" width="120" alt="">
       <p>{{ user.description || 'No description' }}</p>
       <p>
         <nuxt-link to="/">
