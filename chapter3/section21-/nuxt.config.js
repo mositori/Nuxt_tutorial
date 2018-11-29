@@ -40,6 +40,6 @@ module.exports = {
       'auth'
     ]
   },
-  plugins: [ '~/plugins/logger']
+  plugins: ['~/plugins/logger']
 }
 
