@@ -39,6 +39,7 @@ module.exports = {
     middleware: [
       'auth'
     ]
-  }
+  },
+  plugins: [ '~/plugins/logger']
 }
 
